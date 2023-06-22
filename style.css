@@ -124,14 +124,10 @@ label {
       }
 
     12.5%{
-      width: 80vmin;
-      height: 80vmin;
       
         transform: rotateX(60deg) rotateZ(-45deg) scaleX(1.1) scaleY(1.1) scaleZ(1.1);
     }
     25% {
-      width: 10vmin;
-      height: 10vmin;
       
       transform: rotateX(96deg) rotateY(0deg) scaleX(1.4) scaleY(1.4) scaleZ(1.4);
       
@@ -143,14 +139,10 @@ label {
       transform: rotateX(60deg) rotateZ(-45deg) scaleX(1.8) scaleY(1.8) scaleZ(1.8);
     }
     50%{
-      width: 10vmin;
-      height: 10vmin;
       
       transform: rotateX(96deg) rotateY(0deg) scaleX(2) scaleY(2) scaleZ(2);
     }
     62.5%{
-      width: 30vmin;
-      height: 30vmin;
       
       transform: rotateX(30deg) rotateZ(-90deg) scaleX(1.5) scaleY(1.5) scaleZ(1.5);
     }
