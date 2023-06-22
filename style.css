@@ -1503,3 +1503,189 @@ label {
     margin-top: -50vmin;
   }
 }
+
+.content-loading{
+  position: fixed;
+  top: 90%;
+  pointer-events: none;
+  font-size: 5vmin;
+  color: white;
+  font-weight: 900;
+}
+.content-loading::before{
+  animation: loadingAnimation 2s linear infinite;
+  content: "Loading";
+}
+
+@keyframes loadingAnimation {
+  0%{
+    content: "Loading.";
+  }
+  10%{
+    content: "Loading..";
+  }
+  20%{
+    content: "Loading...";
+  }
+  30%{
+    content: "Loading....";
+  }
+  40%{
+    content: "Loading.....";
+  }
+  50%{
+    content: "Loading.....";
+  }
+  60%{
+    content: "Loading....";
+  }
+  70%{
+    content: "Loading...";
+  }
+  80%{
+    content: "Loading..";
+  }
+  90%{
+    content: "Loading.";
+  }
+  100%{
+    content: "Loading";
+  }
+}
+
+.content-site{
+  width: 28vw;
+  position: fixed;
+  pointer-events: none;
+  font-size: 5vmin;
+  color: white;
+  font-weight: 900;
+  animation: fadeIn 4s linear 1 both;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+    margin-top: -20vmin;
+  }to {
+    transform: scale(1);
+    opacity: 1;
+    margin-top: 10vmin;
+  }  
+}
+.content-site::after{
+  animation: contentAnimation 10s linear infinite;
+  content: "";
+  border-right: 1vmin solid white;
+}
+
+@keyframes contentAnimation {
+  0.0%{content:"I am"}
+0.9433962264150944%{content:"I am "}
+1.8867924528301887%{content:"I am W"}
+2.830188679245283%{content:"I am We"}
+3.7735849056603774%{content:"I am Web"}
+4.716981132075472%{content:"I am Web "}
+5.660377358490566%{content:"I am Web D"}
+6.60377358490566%{content:"I am Web De"}
+7.547169811320755%{content:"I am Web Dev"}
+8.49056603773585%{content:"I am Web Deve"}
+9.433962264150944%{content:"I am Web Devel"}
+10.377358490566039%{content:"I am Web Develo"}
+11.320754716981131%{content:"I am Web Develop"}
+12.264150943396226%{content:"I am Web Develope"}
+13.20754716981132%{content:"I am Web Developer"}
+14.150943396226415%{content:"I am Web Developer"}
+15.09433962264151%{content:"I am Web Developer"}
+16.037735849056602%{content:"I am Web Develope"}
+16.9811320754717%{content:"I am Web Develop"}
+17.92452830188679%{content:"I am Web Develo"}
+18.867924528301888%{content:"I am Web Devel"}
+19.81132075471698%{content:"I am Web Deve"}
+20.754716981132077%{content:"I am Web Dev"}
+21.69811320754717%{content:"I am Web De"}
+22.641509433962263%{content:"I am Web D"}
+23.58490566037736%{content:"I am Web "}
+24.528301886792452%{content:"I am Web"}
+25.471698113207548%{content:"I am We"}
+26.41509433962264%{content:"I am W"}
+27.358490566037737%{content:"I am"}
+28.30188679245283%{content:"I am "}
+29.245283018867926%{content:"I am F"}
+30.18867924528302%{content:"I am Fu"}
+31.132075471698112%{content:"I am Ful"}
+32.075471698113205%{content:"I am Full"}
+33.0188679245283%{content:"I am Full "}
+33.9622641509434%{content:"I am Full S"}
+34.905660377358494%{content:"I am Full St"}
+35.84905660377358%{content:"I am Full Sta"}
+36.79245283018868%{content:"I am Full Stac"}
+37.735849056603776%{content:"I am Full Stack"}
+38.679245283018865%{content:"I am Full Stack "}
+39.62264150943396%{content:"I am Full Stack D"}
+40.56603773584906%{content:"I am Full Stack De"}
+41.509433962264154%{content:"I am Full Stack Dev"}
+42.45283018867924%{content:"I am Full Stack Deve"}
+43.39622641509434%{content:"I am Full Stack Devel"}
+44.339622641509436%{content:"I am Full Stack Develo"}
+45.283018867924525%{content:"I am Full Stack Develop"}
+46.22641509433962%{content:"I am Full Stack Develope"}
+47.16981132075472%{content:"I am Full Stack Developer"}
+48.113207547169814%{content:"I am Full Stack Developer"}
+49.056603773584904%{content:"I am Full Stack Developer"}
+50.0%{content:"I am Full Stack Develope"}
+50.943396226415096%{content:"I am Full Stack Develop"}
+51.88679245283019%{content:"I am Full Stack Develo"}
+52.83018867924528%{content:"I am Full Stack Devel"}
+53.77358490566038%{content:"I am Full Stack Deve"}
+54.716981132075475%{content:"I am Full Stack Dev"}
+55.660377358490564%{content:"I am Full Stack De"}
+56.60377358490566%{content:"I am Full Stack D"}
+57.54716981132076%{content:"I am Full Stack "}
+58.49056603773585%{content:"I am Full Stack"}
+59.43396226415094%{content:"I am Full Stac"}
+60.37735849056604%{content:"I am Full Sta"}
+61.320754716981135%{content:"I am Full St"}
+62.264150943396224%{content:"I am Full S"}
+63.20754716981132%{content:"I am Full "}
+64.15094339622641%{content:"I am Full"}
+65.09433962264151%{content:"I am Ful"}
+66.0377358490566%{content:"I am Fu"}
+66.9811320754717%{content:"I am F"}
+67.9245283018868%{content:"I am"}
+68.86792452830188%{content:"I am "}
+69.81132075471699%{content:"I am M"}
+70.75471698113208%{content:"I am Mo"}
+71.69811320754717%{content:"I am Mob"}
+72.64150943396227%{content:"I am Mobi"}
+73.58490566037736%{content:"I am Mobil"}
+74.52830188679245%{content:"I am Mobile"}
+75.47169811320755%{content:"I am Mobile "}
+76.41509433962264%{content:"I am Mobile D"}
+77.35849056603773%{content:"I am Mobile De"}
+78.30188679245283%{content:"I am Mobile Dev"}
+79.24528301886792%{content:"I am Mobile Deve"}
+80.18867924528303%{content:"I am Mobile Devel"}
+81.13207547169812%{content:"I am Mobile Develo"}
+82.0754716981132%{content:"I am Mobile Develop"}
+83.01886792452831%{content:"I am Mobile Develope"}
+83.9622641509434%{content:"I am Mobile Developer"}
+84.90566037735849%{content:"I am Mobile Developer"}
+85.84905660377359%{content:"I am Mobile Developer"}
+86.79245283018868%{content:"I am Mobile Develope"}
+87.73584905660377%{content:"I am Mobile Develop"}
+88.67924528301887%{content:"I am Mobile Develo"}
+89.62264150943396%{content:"I am Mobile Devel"}
+90.56603773584905%{content:"I am Mobile Deve"}
+91.50943396226415%{content:"I am Mobile Dev"}
+92.45283018867924%{content:"I am Mobile De"}
+93.39622641509435%{content:"I am Mobile D"}
+94.33962264150944%{content:"I am Mobile "}
+95.28301886792453%{content:"I am Mobile"}
+96.22641509433963%{content:"I am Mobil"}
+97.16981132075472%{content:"I am Mobi"}
+98.11320754716981%{content:"I am Mob"}
+99.05660377358491%{content:"I am Mo"}
+100.0%{content:"I am M"}
+}
