@@ -378,9 +378,9 @@
             <div class="large-shadow" data-cube="333"></div>
         </div>
     </div>
-    <div class="container-resume" id="ResumeImage" style="display: none;">
+    <div class="cursor-big container-resume" id="ResumeImage" style="display: none;">
     </div>
-    <!-- <div>Hi My Name is Vibhuti Singh</div> -->
+    <div class="cursor-small">Hi My Name is Vibhuti Singh</div>
 </body>
     <script>
         const body = document.getElementsByTagName('body')[0];
@@ -407,9 +407,40 @@
                 cursor3.style.cssText = "left: "+ event.clientX + "px; top: " + event.clientY + "px;"
                 cursor2.style.cssText = "left: "+ event.clientX + "px; top: " + event.clientY + "px;"
                 cursor.style.cssText = "left: "+ event.clientX + "px; top: " + event.clientY + "px;"
-                
+                var hoveredElement = document.elementFromPoint(event.clientX, event.clientY);
+
+                if(hoveredElement.classList.contains('cursor-big')){
+                    cursor.style.width = "70px"
+                    cursor.style.height = "70px"
+                    cursor2.style.display = "none"
+                    cursor3.style.display = "none"
+                    cursor.style.border = "5px solid white"
+                    cursor.style.backgroundColor = "#ffffff6c"
+                    cursor.style.backdropFilter = "none"
+                    // cursor.style.opacity = "0.5"
+                }else if(hoveredElement.classList.contains('cursor-small')){
+                    cursor.style.width = "20px"
+                    cursor.style.height = "20px"
+                    cursor2.style.display = "none"
+                    cursor3.style.display = "none"
+                    cursor.style.border = "5px solid white"
+                    cursor.style.backgroundColor = "#ffffff6c"
+                    cursor.style.backdropFilter = "none"
+                    // cursor.style.opacity = "0.5"
+                }else{
+                    cursor.style.width = "50px"
+                    cursor.style.height = "50px"
+                    cursor.style.display = ""
+                    cursor2.style.display = ""
+                    cursor3.style.display = ""
+                    cursor.style.border = "2px solid white"
+                    cursor.style.backgroundColor = "transparent"
+                    cursor.style.opacity = "1"
+                    cursor.style.backdropFilter = "invert(100%)"
+                }
             });
         }, 16500);
+        // }, 10);
         
     </script>
 </html>
