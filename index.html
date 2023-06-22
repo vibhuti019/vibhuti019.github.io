@@ -13,7 +13,7 @@
     <div class="cursor" style="display: none;"></div>
     <div class="cursor2" style="display: none;"></div>
     <div class="cursor3" style="display: none;"></div>
-  <div class="cubes" id="AnimationCube">
+    <div class="cubes" id="AnimationCube">
         <!--   row, column, z -->
         <div class="cube" data-cube="111">
             <div class="cube-wrap">
@@ -381,74 +381,75 @@
     <div class="cursor-big container-resume" id="ResumeImage" style="display: none;">
     </div>
     <div class="content-loading"></div>
-    <div class="content-site" style="display: none;"></div>
+    <div class="content-site cursor-small" style="display: none;">Hi, I am Vibhuti Singh<br /></div>
 </body>
-    <script>
-        const body = document.getElementsByTagName('body')[0];
-        const cursor = document.querySelector(".cursor");
-        const cursor2 = document.querySelector(".cursor2");
-        const cursor3 = document.querySelector(".cursor3");
-        const loading = document.querySelector(".content-loading");
-        const content = document.querySelector(".content-site");
-        const AnimationCube = document.querySelector("#AnimationCube")
-        const ResumeImage = document.getElementById('ResumeImage');
+<script>
+    const body = document.getElementsByTagName('body')[0];
+    const cursor = document.querySelector(".cursor");
+    const cursor2 = document.querySelector(".cursor2");
+    const cursor3 = document.querySelector(".cursor3");
+    const loading = document.querySelector(".content-loading");
+    const content = document.querySelector(".content-site");
+    const AnimationCube = document.querySelector("#AnimationCube")
+    const ResumeImage = document.getElementById('ResumeImage');
 
 
-        body.style.cursor = "cursor"
-                
-        setTimeout(function() {
-            cursor.style.display = ""
-            cursor2.style.display = ""
-            cursor3.style.display = ""
-            AnimationCube.style.display = "none"
-            ResumeImage.style.display = ""
-            body.style.cursor = "none"
-            loading.style.display = "none"
-            
-        
-            document.addEventListener("mousemove", function(event) {
-                
-                cursor3.style.cssText = "left: "+ event.clientX + "px; top: " + event.clientY + "px;"
-                cursor2.style.cssText = "left: "+ event.clientX + "px; top: " + event.clientY + "px;"
-                cursor.style.cssText = "left: "+ event.clientX + "px; top: " + event.clientY + "px;"
-                var hoveredElement = document.elementFromPoint(event.clientX, event.clientY);
+    body.style.cursor = "cursor"
 
-                if(hoveredElement.classList.contains('cursor-big')){
-                    cursor.style.width = "70px"
-                    cursor.style.height = "70px"
-                    cursor2.style.display = "none"
-                    cursor3.style.display = "none"
-                    cursor.style.border = "5px solid white"
-                    cursor.style.backgroundColor = "#ffffff6c"
-                    cursor.style.backdropFilter = "none"
-                    // cursor.style.opacity = "0.5"
-                }else if(hoveredElement.classList.contains('cursor-small')){
-                    cursor.style.width = "20px"
-                    cursor.style.height = "20px"
-                    cursor2.style.display = "none"
-                    cursor3.style.display = "none"
-                    cursor.style.border = "5px solid white"
-                    cursor.style.backgroundColor = "#ffffff6c"
-                    cursor.style.backdropFilter = "none"
-                    // cursor.style.opacity = "0.5"
-                }else{
-                    cursor.style.width = "50px"
-                    cursor.style.height = "50px"
-                    cursor.style.display = ""
-                    cursor2.style.display = ""
-                    cursor3.style.display = ""
-                    cursor.style.border = "2px solid white"
-                    cursor.style.backgroundColor = "transparent"
-                    cursor.style.opacity = "1"
-                    cursor.style.backdropFilter = "invert(100%)"
-                }
-            });
-        }, 16500);
+    setTimeout(function () {
+        cursor.style.display = ""
+        cursor2.style.display = ""
+        cursor3.style.display = ""
+        AnimationCube.style.display = "none"
+        ResumeImage.style.display = ""
+        body.style.cursor = "none"
+        loading.style.display = "none"
 
-        setTimeout(function (){
-            content.style.display = ""
-        }, 22000)
 
-        
-    </script>
+        document.addEventListener("mousemove", function (event) {
+
+            cursor3.style.cssText = "left: " + event.clientX + "px; top: " + event.clientY + "px;"
+            cursor2.style.cssText = "left: " + event.clientX + "px; top: " + event.clientY + "px;"
+            cursor.style.cssText = "left: " + event.clientX + "px; top: " + event.clientY + "px;"
+            var hoveredElement = document.elementFromPoint(event.clientX, event.clientY);
+
+            if (hoveredElement.classList.contains('cursor-big')) {
+                cursor.style.width = "70px"
+                cursor.style.height = "70px"
+                cursor2.style.display = "none"
+                cursor3.style.display = "none"
+                cursor.style.border = "5px solid white"
+                cursor.style.backgroundColor = "#ffffff6c"
+                cursor.style.backdropFilter = "none"
+                // cursor.style.opacity = "0.5"
+            } else if (hoveredElement.classList.contains('cursor-small')) {
+                cursor.style.width = "20px"
+                cursor.style.height = "20px"
+                cursor2.style.display = "none"
+                cursor3.style.display = "none"
+                cursor.style.border = "5px solid white"
+                cursor.style.backgroundColor = "#ffffff6c"
+                cursor.style.backdropFilter = "none"
+                // cursor.style.opacity = "0.5"
+            } else {
+                cursor.style.width = "50px"
+                cursor.style.height = "50px"
+                cursor.style.display = ""
+                cursor2.style.display = ""
+                cursor3.style.display = ""
+                cursor.style.border = "2px solid white"
+                cursor.style.backgroundColor = "transparent"
+                cursor.style.opacity = "1"
+                cursor.style.backdropFilter = "invert(100%)"
+            }
+        });
+    }, 16500);
+
+    setTimeout(function () {
+        content.style.display = ""
+    }, 22000)
+
+
+</script>
+
 </html>
