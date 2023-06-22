@@ -4,7 +4,75 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  /* cursor: none; */
 }
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 9999;
+  pointer-events: none;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: .2s;
+}
+.cursor2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  z-index: 9999;
+  pointer-events: none;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
+  transition: .1s;
+}
+.cursor3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  z-index: 9999;
+  pointer-events: none;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-big:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: #c6c6c6;
+  opacity: .5;
+}
+.cursor-big:hover ~ .cursor2 {
+  display: none;
+}
+.cursor-big:hover ~ .cursor3 {
+  display: none;
+}
+
+.cursor-small:hover ~ .cursor3 {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: #c6c6c6;
+  opacity: .5;
+}
+.cursor-big:hover ~ .cursor2 {
+  display: none;
+}
+.cursor-big:hover ~ .cursor {
+  display: none;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+
 
 *,
 *:before,
@@ -21,7 +89,7 @@ body {
   align-items: center;
   transform-style: preserve-3d;
   perspective: 1000px;
-  background: linear-gradient(to right, #1abc9c, #9b59b6, #ff6b6b);
+  background: linear-gradient(to right, #1abc9c, #b6ad59, #cbff6b);
 
 background-size: 200% 200%;
   animation: gradientMove 12s linear infinite;
