@@ -21,7 +21,21 @@ body {
   align-items: center;
   transform-style: preserve-3d;
   perspective: 1000px;
-  background: linear-gradient(to bottom right, #a4c5c7, #3a4d4e)
+  background: linear-gradient(to right, #1abc9c, #9b59b6, #ff6b6b);
+
+background-size: 200% 200%;
+  animation: gradientMove 12s linear infinite;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 body:hover > label,
 body:hover > input {
@@ -58,35 +72,57 @@ label {
 }
 @keyframes cubesMain {
     0% {
-        transform: rotateX(30deg) rotateZ(-90deg);
+      width: 10vmin;
+  height: 10vmin;
+  
+        transform: rotateX(30deg) rotateZ(-90deg) scaleX(1) scaleY(1) scaleZ(1);
       }
 
     12.5%{
-        transform: rotateX(60deg) rotateZ(-45deg);
+      width: 80vmin;
+      height: 80vmin;
+      
+        transform: rotateX(60deg) rotateZ(-45deg) scaleX(1.1) scaleY(1.1) scaleZ(1.1);
     }
     25% {
-      transform: rotateX(96deg) rotateY(0deg);
+      width: 10vmin;
+      height: 10vmin;
+      
+      transform: rotateX(96deg) rotateY(0deg) scaleX(1.4) scaleY(1.4) scaleZ(1.4);
+      
     }
     37.5%{
-      transform: rotateX(60deg) rotateZ(-45deg);
+      width: 40vmin;
+      height: 40vmin;
+      
+      transform: rotateX(60deg) rotateZ(-45deg) scaleX(1.8) scaleY(1.8) scaleZ(1.8);
     }
     50%{
-      transform: rotateX(96deg) rotateY(0deg);
+      width: 10vmin;
+      height: 10vmin;
+      
+      transform: rotateX(96deg) rotateY(0deg) scaleX(2) scaleY(2) scaleZ(2);
     }
     62.5%{
-      transform: rotateX(30deg) rotateZ(-90deg);
+      width: 30vmin;
+      height: 30vmin;
+      
+      transform: rotateX(30deg) rotateZ(-90deg) scaleX(1.5) scaleY(1.5) scaleZ(1.5);
     }
     75% {
-      transform: rotateX(60deg) rotateZ(-45deg);
+      width: 10vmin;
+  height: 10vmin;
+  
+      transform: rotateX(60deg) rotateZ(-45deg) scaleX(1.2) scaleY(1.2) scaleZ(1.2);
     }
     87.5%{
-      transform: rotateX(96deg) rotateZ(-45deg);   
+      transform: rotateX(96deg) rotateZ(-45deg) scaleX(0.8) scaleY(0.8) scaleZ(0.8);   
     }
     95%{
-      transform: rotateX(96deg) rotateZ(0deg);   
+      transform: rotateX(96deg) rotateZ(0deg) scaleX(0.4) scaleY(0.4) scaleZ(0.4);   
     }
     100%{
-      transform: rotateX(96deg) rotateZ(0deg);   
+      transform: rotateX(96deg) rotateZ(0deg) scaleX(0) scaleY(0) scaleZ(0);   
     }
   }
 .cube,
@@ -1393,40 +1429,40 @@ label {
   height: 35vmin;
   background-image: url('./image.jpeg');
   background-size: 100% 100%;
-  /* display: none; */
+  background-position: 47% 15%;
   animation: resumeAnimation 8s 1 both;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-top: 0px;
 }
 @keyframes resumeAnimation {
   0%{
     width: 35vmin;
     height: 35vmin;
+    transform: scale(0.2);
   }
   25%{
-    width: 50vmin;
-    height: 50vmin;
-    border-radius: 0px;
-  }
-  50%{
-    width: 50vmin;
-    height: 50vmin;
+    transform: scale(1);
+    width: 70vmin;
+    height: 70vmin;
     background-size: 100%;
     background-clip: content-box;
-    background-position: 47% 15%;
   }
-  75%{
-    background-size: 400%;
-    background-clip: content-box;
-    background-position: 47% 15%;
+  50%{
+    transform: scale(1);
     border: 0px white solid;
   }
+  80%{
+    transform: scale(1);
+    border: 20px white solid;
+    margin-top: 0vmin;
+  }
   100%{
-    background-size: 240%;
-    background-clip: content-box;
-    background-position: 47% 15%;
-    border-radius: 500px;
-    width: 30vmin;
-    height: 30vmin;
+    transform: scale(1);
+    background-size: 250%;
+    border-radius: 30vmin;
+    width: 25vmin;
+    height: 25vmin;
     border: 5px white solid;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    margin-top: -50vmin;
   }
 }
