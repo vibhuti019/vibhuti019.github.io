@@ -1387,3 +1387,46 @@ label {
 
 
 
+
+.container-resume{
+  width: 35vmin;
+  height: 35vmin;
+  background-image: url('./image.jpeg');
+  background-size: 100% 100%;
+  /* display: none; */
+  animation: resumeAnimation 8s 1 both;
+}
+@keyframes resumeAnimation {
+  0%{
+    width: 35vmin;
+    height: 35vmin;
+  }
+  25%{
+    width: 50vmin;
+    height: 50vmin;
+    border-radius: 0px;
+  }
+  50%{
+    width: 50vmin;
+    height: 50vmin;
+    background-size: 100%;
+    background-clip: content-box;
+    background-position: 47% 15%;
+  }
+  75%{
+    background-size: 400%;
+    background-clip: content-box;
+    background-position: 47% 15%;
+    border: 0px white solid;
+  }
+  100%{
+    background-size: 240%;
+    background-clip: content-box;
+    background-position: 47% 15%;
+    border-radius: 500px;
+    width: 30vmin;
+    height: 30vmin;
+    border: 5px white solid;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+}
