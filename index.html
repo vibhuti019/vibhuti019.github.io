@@ -421,6 +421,7 @@
                 cursor.style.border = "5px solid white"
                 cursor.style.backgroundColor = "#ffffff6c"
                 cursor.style.backdropFilter = "none"
+                cursor.style.transition = ""
                 // cursor.style.opacity = "0.5"
             } else if (hoveredElement.classList.contains('cursor-small')) {
                 cursor.style.width = "20px"
@@ -430,6 +431,7 @@
                 cursor.style.border = "5px solid white"
                 cursor.style.backgroundColor = "#ffffff6c"
                 cursor.style.backdropFilter = "none"
+                cursor.style.transition = ""
                 // cursor.style.opacity = "0.5"
             } else {
                 cursor.style.width = "50px"
@@ -437,10 +439,11 @@
                 cursor.style.display = ""
                 cursor2.style.display = ""
                 cursor3.style.display = ""
-                cursor.style.border = "2px solid white"
+                cursor.style.border = "5px solid #ffff00"
                 cursor.style.backgroundColor = "transparent"
                 cursor.style.opacity = "1"
                 cursor.style.backdropFilter = "invert(100%)"
+                cursor.style.transition = ".25s"
             }
         });
     }, 16500);
