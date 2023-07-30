@@ -382,7 +382,13 @@
     </div>
     <div class="content-loading"></div>
     <div class="content-site cursor-small" style="display: none;">Hi, I am Vibhuti Singh<br /></div>
-    
+    <div class="a-hrefs" style="display: none;" id="a-hrefs">
+        <div class="circle-image about"></div>
+        <div class="circle-image experience"></div>
+        <div class="circle-image resume"></div>
+        <div class="circle-image projects"></div>
+        <div class="circle-image blogs"></div>
+    </div>
 </body>
 <script>
     const body = document.getElementsByTagName('body')[0];
@@ -393,6 +399,7 @@
     const content = document.querySelector(".content-site");
     const AnimationCube = document.querySelector("#AnimationCube")
     const ResumeImage = document.getElementById('ResumeImage');
+    const aHrefs = document.getElementById('a-hrefs');
 
 
     body.style.cursor = "cursor"
@@ -454,12 +461,7 @@
     }, 22000)
 
     setTimeout(function (){
-        // Below animation
-        // 1) About
-        // 2) Experience
-        // 3) Resume
-        // 4) Projects
-        // 5) Contact
+        aHrefs.style.display = ""
     }, 25500)
 </script>
 
