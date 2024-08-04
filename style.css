@@ -6,7 +6,9 @@ body {
   padding: 0;
   /* cursor: none; */
 }
-
+a{
+  all:unset;
+}
 .cursor {
   position: fixed;
   top: 0;
