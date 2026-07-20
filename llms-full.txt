@@ -1,0 +1,140 @@
+# Vibhuti Singh - Software Developer Portfolio
+
+## Overview
+I build AI-native platforms — most recently an SMB automation OS you can run in plain natural language through a custom MCP server. I am an experienced software engineer and founder specializing in building high-scale distributed backend systems, AI workflows, and seamless frontend experiences. My core tech stack includes Next.js, Golang, and AWS.
+
+---
+
+## Technical Skills & Arsenal
+
+### Languages
+Go, Java, Python, JavaScript, TypeScript, COBOL
+
+### Backend & Frameworks
+Next.js, FastAPI, Spring Boot, REST APIs, Mainframe
+
+### Cloud & Developer Tools
+AWS, Azure, Docker, Git, Linux, Jira
+
+### Databases
+MySQL, MongoDB, SQL
+
+### AI & Machine Learning
+Machine Learning, AutoML, NLP, Data Analysis
+
+### Other Domains
+Product Engineering, System Architecture, SaaS Development
+
+---
+
+## Core Capabilities
+- **Model Context Protocol (MCP) & AI Tooling**: Architecting custom MCP servers that empower LLMs to trigger backend CRM systems, database queries, and workflow automation in natural language with <120ms execution latency.
+- **High-Throughput Golang Microservices**: Engineering lock-free concurrent workers, high-frequency message processing pipelines, and low-latency API gateways in Go designed for zero downtime and 99.9% uptime reliability.
+- **Production ML & Predictive NLP Gateways**: Fine-tuning, containerizing, and serving high-accuracy NLP models with FastAPI & Hugging Face backends. Achieved 94.8% diagnostic accuracy across complex multi-taxonomy classifications.
+- **Cloud Infrastructure & Telemetry**: Designing automated CI/CD pipelines, containerized deployments, and high-throughput telemetry ingestion pipelines handling 1,000+ real-time telemetry events per second.
+
+---
+
+## Professional Experience
+
+### Software Engineer 2 @ DXC Technology
+**Oct 2023 – Present**
+Spearheading the modernization of critical enterprise backend systems. Migrating monolithic legacy business logic (COBOL/Mainframe) into scalable, maintainable microservices using modern tech stacks. Driving database optimization, streamlining API performance, and overseeing seamless deployments and operations on Azure cloud infrastructure to ensure 99.9% high availability.
+
+### Founder & Innovation Lead @ Click To Automate
+**Sep 2025 – Present**
+Leading the technical vision and product strategy for an agency specializing in business automation. Architecting end-to-end scalable web applications, custom SaaS platforms, and AI-powered workflows. Engineered a flagship Model Context Protocol (MCP) server that empowers LLMs to execute complex CRM operations, data queries, and API triggers entirely through natural language with <120ms latency.
+
+### Java Developer (Intern) @ Paytm
+**Jun 2022 – Dec 2022**
+Collaborated directly with senior SDEs to test, authenticate, and optimize the performance of high-throughput Transaction Services APIs. Developed robust backend testing frameworks utilizing Spring Boot and TestNG. Designed and implemented specialized mock test cases and automated API testing suites, significantly reducing regression bugs and accelerating the deployment lifecycle.
+
+### Android Developer @ Innoskrit
+**Oct 2019 – Jun 2020**
+Developed and shipped native Android applications utilizing Java and modern mobile design patterns. Focused heavily on building robust network layers, successfully designing and integrating RESTful APIs to deliver seamless, real-time data synchronization. Enhanced overall mobile user experience through optimized UI rendering and responsive asynchronous background processing.
+
+---
+
+## Featured Projects
+
+### ClickToAutomate MCP Server (2026)
+*Tech Stack: Model Context Protocol, Golang, AI*
+An MCP server that lets the entire ClickToAutomate platform be operated in plain natural language. Enables conversational CRM operations with <120ms tool execution latency.
+
+### ML Disease Symptom Checker (Dec 2025 – Jan 2026)
+*Tech Stack: Machine Learning, NLP, FastAPI, Hugging Face*
+Analyzes user-reported symptoms and predicts possible diseases using NLP and ML models, integrated with a scalable FastAPI backend. Achieved 94.8% accuracy across 40+ disease taxonomies. 
+- GitHub: https://github.com/vibhuti019/ML-Disease-Symptom-Checker-With-Integrated-Backend
+- Demo: https://huggingface.co/vibhuti019/disease_symptom_checker
+
+### KuberKhazana (Stock Analysis) (Aug 2022 – Sep 2022)
+*Tech Stack: SpringBoot, React.js, Chart.js*
+Uses SpringBoot for backend and React.js for frontend. Fetches data via TradingView Webhook and places trades using API providers like AngelView. Processed 500+ automated daily trading signals with zero drop rates.
+
+### TrinKart (B2B Solution) (Mar 2022 – Apr 2022)
+*Tech Stack: MongoDB, SpringBoot, React.js*
+An E-Commerce Platform to purchase gifts built from scratch. B2B platform with Admin Panel, Business Panel, and User View. Scalable multi-tenant architecture supporting sub-second guest checkouts.
+
+### Cloud Portal For Solar Vehicle (Aug 2021 – Oct 2021)
+*Tech Stack: Cloud Computing, IoT*
+Created a cloud portal for a solar vehicle for real-time monitoring and data analysis of energy usage, battery life, and solar panel efficiency. High-throughput telemetry ingest handling 1,000+ metrics/sec.
+
+### Repair Desk Clone Frontend (May 2021 – Jun 2021)
+*Tech Stack: React.js, Node.js, MongoDB*
+Freelance project developing a responsive web portal to manage business, featuring custom interactive elements (forms, sliders, modals). Streamlined repair workflow UI reducing turnaround time by 30%.
+- GitHub: https://github.com/vibhuti019/Project-Repair-Desk-Clone-Frontend
+
+### Apache Open Whisk Contribution (Feb 2020)
+*Tech Stack: Open Source*
+Resolved issues in the official website of Apache Openwhisk. Merged open-source contribution to core serverless ecosystem documentation.
+- Issue Link: https://github.com/apache/openwhisk-website/issues/420
+
+---
+
+## Client Work (Freelance)
+
+### Click To Automate (clicktoautomate.in)
+*Category: Agency · Founder Brand*
+Led the development of a comprehensive business automation and AI workflow platform using scalable architectures. Features a custom MCP server that lets the entire platform be operated in plain natural language. Serving 50+ clients, executing 100k+ automated workflows/mo.
+
+### Banaras Karigari (banaraskarigari.com)
+*Category: E-commerce · Heritage*
+Developed the robust e-commerce backend and API infrastructure for an artisan-direct Banarasi silk storefront. Handled 5,000+ orders/mo with 99.9% API uptime.
+
+### Varanasi Darshan Tours (varanasidarshantours.com)
+*Category: Tourism · Booking*
+Built a seamless booking and scheduling backend system for a premium spiritual tourism and guided experiences platform. Powering 1,200+ monthly tour bookings.
+
+### Amandeep Singh Bais (portfolio2-sigma-ivory.vercel.app)
+*Category: Portfolio · Entrepreneur*
+Engineered a high-performance personal portfolio showcasing cross-industry business ventures with modern web technologies. Achieved 99+ Lighthouse performance scores.
+
+---
+
+## Education Background
+
+### PG Certificate in Software Engineering for Data Science
+**IIIT Hyderabad & Great Learning** (Completed: Nov 2024)
+- Credential Link: https://www.mygreatlearning.com/certificate/VVRCPVAB
+
+#### Academic Course Projects (IIIT Hyderabad):
+- **Docker Containers - Batch Serving of a ML Model (Aug 2024)**: Built an explainable ML model using H2o package on the bike rental dataset, displayed insights, and created a Docker container to perform batch serving. *Skills: Python, Machine learning, AutoML, Explainable AI, H2o, Docker*
+- **Python Flask Machine Learning Application (Jul 2024)**: Developed a Flask ML application for user registration and loan eligibility prediction with a MySQL backend for reporting. *Skills: Python, MySQL, Data Analysis, Machine Learning, Web Frameworks*
+- **Spark and PySpark (Jun 2024)**: Analyzed IoT sensor data using SparkSQL to track high CO2 levels across countries, and built an ML model to predict employee compensation using PySpark. *Skills: SparkSQL, PySpark, Machine learning*
+- **Database Systems & Product Shipping Analysis (May 2024)**: Created a NoSQL MongoDB ProductOrder database and performed data analytics on e-commerce shipment data using PCA and LDA for dimensionality reduction. *Skills: MongoDB, Data Analysis, One Hot Encoding, PCA and LDA*
+- **Natural Language Processing (Apr 2024)**: Generated vector representation of texts using CBOW and Skip Gram methods, tokenized POS tags using NLTK, and predicted named entities in sentences. *Skills: NLP, CBOW, Skip Gram, Tokenization, NER*
+
+### B.Tech in Computer Science
+**ABES Engineering College** (Graduated: Aug 2022)
+
+---
+
+## Licenses & Certifications
+- **PG Certificate in Software Engineering for Data Science** — IIIT Hyderabad (Nov 2024) [Python, Machine Learning]
+- **AWS Services for Solutions Architect Associate [2023]** — Udemy (May 2023) [AWS, Cloud Computing]
+- **Secure coding guide for Developers, Analysts and Architects** — Udemy (May 2023) [Software Development]
+- **CCNA: Introduction to Networks** — Cisco (Aug 2021)
+- **A Beginner's Guide to Linux Kernel Development** — The Linux Foundation (Jul 2021)
+- **Introduction to Packet Tracer** — Cisco (Jul 2021)
+- **Introduction to IoT** — Cisco (Jul 2021)
+- **Hack With Mait** — HackerEarth (Dec 2020)

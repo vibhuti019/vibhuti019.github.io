@@ -1,0 +1,12 @@
+# Vibhuti Singh - Software Developer Portfolio
+
+> I build AI-native platforms and high-scale backend systems.
+
+## Key Links & Sections
+- `/#capabilities` : Core architecture and engineering skills (MCP, Golang, ML, AWS).
+- `/#experience` : Professional work history including DXC Technology, Click To Automate, and Paytm.
+- `/#projects` : Featured creations including AI tooling, Backend Systems, and Full Stack platforms.
+- `/#freelance` : Client work showcasing scalable e-commerce and booking platforms.
+- `/#contact` : Contact information and Education Background (B.Tech, PG Certificate).
+
+For a comprehensive, single-file context of my entire portfolio, skills, and project descriptions, please read `/llms-full.txt`.
