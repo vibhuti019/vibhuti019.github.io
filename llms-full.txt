@@ -1,7 +1,10 @@
-# Vibhuti Singh - Software Developer Portfolio
+# Vibhuti Singh - AI & Backend Systems Engineer
 
 ## Overview
-I build AI-native platforms — most recently an SMB automation OS you can run in plain natural language through a custom MCP server. I am an experienced software engineer and founder specializing in building high-scale distributed backend systems, AI workflows, and seamless frontend experiences. My core tech stack includes Next.js, Golang, and AWS.
+I build AI-native platforms, high-scale distributed backend systems, and open-source AI infrastructure. My flagship open-source project is the ClickToAutomate AI Nexus Router — a free, open-source AI Gateway that routes, manages, and optimizes multi-provider LLM requests (Golang core + React frontend, shipped as a binary and a Wails desktop app, MIT licensed). I also built an SMB automation OS you can operate in plain natural language through a custom MCP server. I am a software engineer and founder specializing in AI workflows, low-latency Go microservices, and seamless frontend experiences. Core tech stack: Golang, Next.js, AI/LLM tooling, and AWS.
+
+- GitHub org (open source): https://github.com/Click-To-Automate
+- Personal GitHub: https://github.com/vibhuti019
 
 ---
 
@@ -56,6 +59,12 @@ Developed and shipped native Android applications utilizing Java and modern mobi
 ---
 
 ## Featured Projects
+
+### ClickToAutomate AI Nexus Router (2026) — Flagship Open Source ⭐
+*Tech Stack: Golang, TypeScript/React, Wails, Multi-provider LLM routing · License: MIT*
+A free, open-source AI Gateway that routes, manages, and optimizes multi-provider LLM requests. High-performance Golang core paired with a React frontend, distributed both as a standalone executable and as a cross-platform desktop application via Wails. Publicly available and actively maintained under the Click To Automate GitHub org.
+- GitHub: https://github.com/Click-To-Automate/ClickToAutomate-AI-Nexus-Router
+- Org: https://github.com/Click-To-Automate
 
 ### ClickToAutomate MCP Server (2026)
 *Tech Stack: Model Context Protocol, Golang, AI*

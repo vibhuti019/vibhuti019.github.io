@@ -1,12 +1,18 @@
-# Vibhuti Singh - Software Developer Portfolio
+# Vibhuti Singh - AI & Backend Systems Engineer
 
-> I build AI-native platforms and high-scale backend systems.
+> I build AI-native platforms, high-scale Golang backend systems, and open-source AI infrastructure. My flagship open-source project is the ClickToAutomate AI Nexus Router — a free AI Gateway that routes and optimizes multi-provider LLM requests, built with a Golang core and a React frontend (Wails desktop app), MIT licensed.
 
 ## Key Links & Sections
 - `/#capabilities` : Core architecture and engineering skills (MCP, Golang, ML, AWS).
 - `/#experience` : Professional work history including DXC Technology, Click To Automate, and Paytm.
 - `/#projects` : Featured creations including AI tooling, Backend Systems, and Full Stack platforms.
+- `/#github` : Live open-source work from the Click To Automate GitHub org — flagship: AI Nexus Router (open-source AI Gateway).
 - `/#freelance` : Client work showcasing scalable e-commerce and booking platforms.
 - `/#contact` : Contact information and Education Background (B.Tech, PG Certificate).
+
+## Open Source
+- AI Nexus Router (AI Gateway, Golang + React + Wails, MIT): https://github.com/Click-To-Automate/ClickToAutomate-AI-Nexus-Router
+- GitHub org: https://github.com/Click-To-Automate
+- Personal GitHub: https://github.com/vibhuti019
 
 For a comprehensive, single-file context of my entire portfolio, skills, and project descriptions, please read `/llms-full.txt`.
