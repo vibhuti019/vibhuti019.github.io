@@ -3,20 +3,23 @@
  *
  * Caching strategies:
  *   Cache-First  — audio, images, fonts, Next.js static chunks
- *                  (content-hashed filenames, safe to serve from cache indefinitely)
  *   Network-First — HTML / navigation requests
- *                  (always try fresh, fall back to cached shell on offline)
  *
- * On every SW install the audio file and key public assets are precached
- * so the music is ready instantly on the second visit without any network round-trip.
+ * Audio/Range-request handling:
+ *   Browsers split large audio files into multiple Range requests (e.g. 64 KB chunks).
+ *   The Cache API refuses to store 206 Partial Content responses.
+ *
+ *   Solution:
+ *     1. On first request for an audio file, fetch the FULL file (no Range header)
+ *        and cache the 200 response.
+ *     2. For every Range request thereafter, slice the cached ArrayBuffer and
+ *        construct a synthetic 206 response — 0 network bytes, instant seek.
  */
 
-const CACHE_VERSION = 'portfolio-v1'
+const CACHE_VERSION = 'portfolio-v3'
 
-// Assets to eagerly download and cache on SW install.
-// Keep this list small — only things every visitor needs.
 const PRECACHE_URLS = [
-  '/audio/background.opus',  // ← music — most important, ~620 KB
+  '/audio/background.opus',
   '/og-image.png',
   '/image.jpeg',
 ]
@@ -27,7 +30,7 @@ self.addEventListener('install', (event) => {
     caches
       .open(CACHE_VERSION)
       .then((cache) => cache.addAll(PRECACHE_URLS))
-      .then(() => self.skipWaiting())  // activate immediately without waiting
+      .then(() => self.skipWaiting())
   )
 })
 
@@ -38,22 +41,72 @@ self.addEventListener('activate', (event) => {
       .keys()
       .then((keys) =>
         Promise.all(
-          // Delete every cache that isn't the current version
           keys
             .filter((key) => key !== CACHE_VERSION)
             .map((key) => caches.delete(key))
         )
       )
-      .then(() => self.clients.claim())  // take control of all open tabs immediately
+      .then(() => self.clients.claim())
   )
 })
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+/**
+ * Parse a Range header value (e.g. "bytes=0-65535") against a total size.
+ * Returns { start, end } clamped to [0, total-1].
+ */
+function parseRange(rangeHeader, totalBytes) {
+  const match = rangeHeader.match(/bytes=(\d*)-(\d*)/)
+  if (!match) return null
+  const start = match[1] !== '' ? parseInt(match[1], 10) : totalBytes - parseInt(match[2], 10)
+  const end   = match[2] !== '' ? parseInt(match[2], 10) : totalBytes - 1
+  return {
+    start: Math.max(0, start),
+    end:   Math.min(totalBytes - 1, end),
+  }
+}
+
+/**
+ * Serve a Range request from a cached full-file Response.
+ * Reads the full ArrayBuffer, slices the requested bytes, and
+ * returns a synthetic 206 response that the browser accepts normally.
+ */
+async function serveRangeFromCache(cachedResponse, rangeHeader) {
+  const buffer    = await cachedResponse.arrayBuffer()
+  const total     = buffer.byteLength
+  const range     = parseRange(rangeHeader, total)
+
+  if (!range) {
+    // Malformed Range header — return full file as 200
+    return new Response(buffer, {
+      status: 200,
+      headers: {
+        'Content-Type':   cachedResponse.headers.get('Content-Type') || 'audio/opus',
+        'Content-Length': String(total),
+      },
+    })
+  }
+
+  const { start, end } = range
+  const sliced = buffer.slice(start, end + 1)
+
+  return new Response(sliced, {
+    status: 206,
+    headers: {
+      'Content-Type':   cachedResponse.headers.get('Content-Type') || 'audio/opus',
+      'Content-Range':  `bytes ${start}-${end}/${total}`,
+      'Content-Length': String(sliced.byteLength),
+      'Accept-Ranges':  'bytes',
+    },
+  })
+}
 
 // ─── Fetch ────────────────────────────────────────────────────────────────────
 self.addEventListener('fetch', (event) => {
   const { request } = event
   const url = new URL(request.url)
 
-  // Only handle same-origin + Google Fonts (cross-origin CDN)
   const isSameOrigin = url.origin === self.location.origin
   const isGoogleFont =
     url.hostname === 'fonts.googleapis.com' ||
@@ -61,28 +114,58 @@ self.addEventListener('fetch', (event) => {
 
   if (!isSameOrigin && !isGoogleFont) return
 
-  // ── Cache-First: static assets (content-hashed or binary) ─────────────────
-  const isStaticAsset =
-    url.pathname.startsWith('/_next/static/') ||  // JS/CSS chunks (content-hashed)
-    url.pathname.startsWith('/audio/') ||           // music
-    url.pathname.startsWith('/_next/image') ||      // Next.js image optimizer
-    isGoogleFont ||                                 // font files & CSS
-    /\.(png|jpe?g|gif|svg|webp|ico|woff2?|ttf|otf|opus|mp3|wav|pdf)$/i.test(
-      url.pathname
+  // ── Audio files — full cache + synthetic Range serving ────────────────────
+  const isAudio = url.pathname.startsWith('/audio/')
+
+  if (isAudio) {
+    const rangeHeader = request.headers.get('range')
+
+    event.respondWith(
+      caches.open(CACHE_VERSION).then(async (cache) => {
+        // Always look up the base URL (no Range), since we cache the full file
+        const cacheKey     = new Request(url.pathname)
+        const cachedFull   = await cache.match(cacheKey)
+
+        if (cachedFull) {
+          // Full file is cached — synthesize the Range slice, 0 network bytes
+          if (rangeHeader) {
+            return serveRangeFromCache(cachedFull.clone(), rangeHeader)
+          }
+          return cachedFull
+        }
+
+        // Not in cache — fetch the FULL file (strip Range header) and cache it
+        const fullFetch = await fetch(new Request(url.pathname))
+        if (fullFetch.status === 200) {
+          await cache.put(cacheKey, fullFetch.clone())
+        }
+
+        // Now serve from the freshly cached copy (or the raw response if fetch failed)
+        const freshCached = await cache.match(cacheKey)
+        if (freshCached && rangeHeader) {
+          return serveRangeFromCache(freshCached.clone(), rangeHeader)
+        }
+        return fullFetch
+      })
     )
+    return
+  }
+
+  // ── Cache-First: other static assets ──────────────────────────────────────
+  const isStaticAsset =
+    url.pathname.startsWith('/_next/static/') ||
+    url.pathname.startsWith('/_next/image')   ||
+    isGoogleFont                               ||
+    /\.(png|jpe?g|gif|svg|webp|ico|woff2?|ttf|otf|pdf)$/i.test(url.pathname)
 
   if (isStaticAsset) {
     event.respondWith(
       caches.match(request).then((cached) => {
         if (cached) return cached
-
-        // Not in cache yet — fetch and store for next time
         return fetch(request).then((response) => {
-          if (response.ok || response.status === 0 /* opaque */) {
+          if (response.status === 200 || response.status === 0) {
             const clone = response.clone()
-            caches
-              .open(CACHE_VERSION)
-              .then((cache) => cache.put(request, clone))
+            caches.open(CACHE_VERSION).then((c) => c.put(request, clone))
           }
           return response
         })
@@ -95,11 +178,8 @@ self.addEventListener('fetch', (event) => {
   if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request).catch(() =>
-        // Offline fallback — serve the cached shell page
         caches.match('/') || caches.match('/index.html')
       )
     )
   }
-
-  // All other requests (API calls, analytics) — let the browser handle them normally
 })
